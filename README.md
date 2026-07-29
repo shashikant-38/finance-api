@@ -1,116 +1,114 @@
-# 💳 Finance API
+# 💳 Finance API - Microservices
 
-A **production-ready Finance API** built with **Spring Boot** that provides secure REST APIs for loan management, EMI calculation, repayment schedules, and customer management. The project follows enterprise-level development practices with clean architecture and scalable design.
+A **production-ready Finance Platform** built using **Spring Boot Microservices**. The project follows a distributed architecture to manage loan processing, EMI calculation, customer management, authentication, and payments through independently deployable services.
 
----
+## 🚀 Architecture
 
-## 🚀 Features
-
-- 🔐 JWT Authentication & Authorization
-- 👤 Customer Management
-- 💰 Loan Management
-- 📊 EMI Calculation
-- 📅 Repayment Schedule Generation
-- 💵 Interest Calculation
-- 📈 Loan Status Tracking
-- ✅ Request Validation
-- ⚠️ Global Exception Handling
-- 📝 Logging
-- 📖 Swagger/OpenAPI Documentation
-- 🧪 Unit & Integration Testing
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Version |
-|------------|---------|
-| Java | 21 |
-| Spring Boot | 3.x |
-| Spring Security | Latest |
-| Spring Data JPA | Latest |
-| PostgreSQL | Latest |
-| Maven | Latest |
-| JWT | Latest |
-| Lombok | Latest |
-| Swagger (OpenAPI) | Latest |
-| JUnit 5 | Latest |
-| Mockito | Latest |
+- API Gateway
+- Service Registry (Eureka)
+- Config Server
+- Authentication Service
+- Customer Service
+- Loan Service
+- EMI Service
+- Payment Service
+- Notification Service
+- PostgreSQL
+- Kafka (Event-Driven Communication)
+- Docker
+- Spring Cloud
 
 ---
 
-## 📂 Project Structure
+## ✨ Features
 
-```text
-src
-├── main
-│   ├── java
-│   │   ├── controller
-│   │   ├── service
-│   │   ├── repository
-│   │   ├── entity
-│   │   ├── dto
-│   │   ├── mapper
-│   │   ├── security
-│   │   ├── config
-│   │   ├── exception
-│   │   └── util
-│   └── resources
-│       ├── application.properties
-│       └── static
-└── test
+- Secure JWT Authentication
+- Loan Application & Processing
+- EMI Calculation
+- Repayment Schedule
+- Customer Management
+- Payment Management
+- Service Discovery
+- Centralized Configuration
+- API Gateway Routing
+- Distributed Logging
+- Global Exception Handling
+- OpenAPI Documentation
+
+---
+
+## 🛠 Tech Stack
+
+- Java 21
+- Spring Boot 3
+- Spring Cloud
+- Spring Security
+- Spring Data JPA
+- Spring Cloud Gateway
+- Eureka Server
+- Config Server
+- PostgreSQL
+- Kafka
+- Docker
+- Maven
+- JWT
+- Lombok
+- Swagger/OpenAPI
+- JUnit 5
+- Mockito
+
+---
+
+## 📂 Microservices
+
+```
+finance-platform
+│
+├── api-gateway
+├── service-registry
+├── config-server
+├── auth-service
+├── customer-service
+├── loan-service
+├── emi-service
+├── payment-service
+├── notification-service
+└── common-library
 ```
 
 ---
 
-## 📌 API Modules
+## 📡 Service Communication
 
-- Authentication
-- Customer Management
-- Loan Management
-- EMI Calculator
-- Repayment Schedule
-- Interest Calculator
+- REST APIs
+- Kafka Event Streaming
+- Service Discovery using Eureka
+- Centralized Configuration
+- JWT-based Authentication
 
 ---
 
-## ⚙️ Getting Started
+## 🚀 Getting Started
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/shashikant-38/finance-api.git
 ```
 
-### Navigate to the Project
+### Run Services
 
-```bash
-cd finance-api
-```
+Start the services in the following order:
 
-### Configure Database
-
-Update `application.properties`
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/finance_db
-spring.datasource.username=postgres
-spring.datasource.password=your_password
-
-spring.jpa.hibernate.ddl-auto=update
-```
-
-### Run the Application
-
-```bash
-mvn spring-boot:run
-```
-
-Application will start at:
-
-```
-http://localhost:8080
-```
+1. Config Server
+2. Eureka Server
+3. API Gateway
+4. Auth Service
+5. Customer Service
+6. Loan Service
+7. EMI Service
+8. Payment Service
+9. Notification Service
 
 ---
 
@@ -124,37 +122,21 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 🗺️ Roadmap
+## 🛣 Roadmap
 
-- [x] Spring Boot Setup
-- [ ] User Authentication
-- [ ] Customer APIs
-- [ ] Loan APIs
-- [ ] EMI Calculator
-- [ ] Repayment Schedule
-- [ ] Email Notifications
-- [ ] Docker Support
-- [ ] Redis Caching
+- [x] Microservices Architecture
+- [ ] Config Server
+- [ ] Eureka Server
+- [ ] API Gateway
+- [ ] JWT Authentication
+- [ ] Customer Service
+- [ ] Loan Service
+- [ ] EMI Service
+- [ ] Payment Service
+- [ ] Notification Service
 - [ ] Kafka Integration
-- [ ] CI/CD with GitHub Actions
-- [ ] Kubernetes Deployment
+- [ ] Docker Compose
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Open a Pull Request.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
@@ -162,8 +144,8 @@ This project is licensed under the MIT License.
 
 **Shashikant Patil**
 
-- GitHub: https://github.com/shashikant-38
+GitHub: https://github.com/shashikant-38
 
 ---
 
-⭐ If you found this project useful, consider giving it a star!
+⭐ If you find this project useful, consider giving it a star.
