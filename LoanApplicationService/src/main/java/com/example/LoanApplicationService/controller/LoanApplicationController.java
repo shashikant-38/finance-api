@@ -17,8 +17,6 @@ public class LoanApplicationController {
     public LoanApplicationController(LoanApplicationService loanApplicationService) {
         this.loanApplicationService = loanApplicationService;
     }
-
-    // Create loan application
     @PostMapping
     public ResponseEntity<LoanApplication> createLoan(
             @RequestBody LoanApplication loanApplication) {
@@ -29,7 +27,6 @@ public class LoanApplicationController {
         return new ResponseEntity<>(savedLoan, HttpStatus.CREATED);
     }
 
-    // Get all loan applications
     @GetMapping
     public ResponseEntity<List<LoanApplication>> getAllLoans() {
 
@@ -39,7 +36,6 @@ public class LoanApplicationController {
         return ResponseEntity.ok(loans);
     }
 
-    // Get loan by ID
     @GetMapping("/{id}")
     public ResponseEntity<LoanApplication> getLoanById(
             @PathVariable Long id) {
@@ -50,5 +46,23 @@ public class LoanApplicationController {
         return ResponseEntity.ok(loan);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<LoanApplication> updateLoan(
+            @PathVariable Long id,
+            @RequestBody LoanApplication loanApplication) {
 
+        LoanApplication updatedLoan =
+                loanApplicationService.updateLoan(id, loanApplication);
+
+        return ResponseEntity.ok(updatedLoan);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteLoan(
+            @PathVariable Long id) {
+
+        loanApplicationService.deleteLoan(id);
+
+        return ResponseEntity.noContent().build();
+    }
 }
